@@ -1,0 +1,8 @@
+<% if current_user.musician %>
+<h3>Welcome, <%= current_user.name%></h3>
+<p>Name: <%= current_user.name if current_user.name %></p>
+<p>Your music</p>
+<% else %>
+<h3>Welcome, <%= current_user.name%></h3>
+<p>Here are the songs that you preferred</p>
+<% end %>

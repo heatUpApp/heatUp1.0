@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>HeatUp - Music Website for you</title>
+		<style>
+			a {
+				text-decoration: none;
+				background: -webkit-linear-gradient(red, orange);
+  				-webkit-background-clip: text;
+  				-webkit-text-fill-color: transparent;
+			}
+
+			body {
+				background-image:url('http://zwallpaper.biz/hinhanh/anhto/1312203D-wallpaper-Guitar-Music-Art.jpg');
+				background-repeat:no-repeat;
+				background-attachment: fixed;
+				background-position:top center;
+				background-size: 100% auto;
+				background-clip: border-box;
+
+			}
+		</style>
+	<head>
+	
+	<body bgcolor="#f2f1ef">
+		<h1 style="text-align:center; font-family:Verdana; color:inherit; font-size:60px;"><a href="home">heatUp</a></h1>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+		<h1 style="text-align:center; color:#f2f1ef; font-family:Verdana;">PlayNow</h1>
+		
+		<div align="center">
+			<%= form_tag player_path do %>
+			<%= radio_button_tag(:genre, "Hip-Hop") %>
+			<%= label_tag(:hip_hop, "Hip-Hop") %> 			
+ 			<%= radio_button_tag(:genre, "Rock") %>
+			<%= label_tag(:rock, "Rock") %>
+			<%= radio_button_tag(:genre, "Pop") %>
+			<%= label_tag(:pop, "Pop") %>
+			<%= radio_button_tag(:genre, "Classical") %>
+			<%= label_tag(:classical, "Classical") %>
+  			<%= submit_tag "Choose!" %>
+			<% end %>
+		</div>
+
+				<table align="center" cellspacing="50px">
+			<tr>
+				
+				<% if user_signed_in? %>
+				<td  style="font-size:50px;color:red">
+				
+					<%= button_to "Account", user_path(id: current_user), :class => "button large", :method => :get %>
+				
+				</td>
+				<td  style="font-size:50px;color:red">
+					<%= button_to "Sign out", destroy_user_session_path, :class => "button large", :method => :delete %>
+				</td>
+				<% else %>
+				<td  style="font-size:50px;color:red">
+					<%= button_to "Sign in", user_session_path, :class => "button large", :method => :get %>
+				</td>
+				<td  style="font-size:50px;color:red">
+					<%= button_to "Sign Up", new_user_registration_path, :class => "button large", :method => :get %>
+				</td>
+				<% end %>
+				
+			</tr>
+		</table>
+	</body>
+</html>

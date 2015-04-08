@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HeatUp - PlayNow</title>
+	<head>
+	
+	<body bgcolor="yellow">
+		<h1 style="text-align:center; font-size:60px; color:red"><a href="home">HeatUp</a></h1>
+		<h1 style="text-align:center; color:indigo"><%= @genre %></h1>
+		<div align="center">
+			
+			<table align="center" border="2">
+				<caption style="color:indigo">Player</caption>
+				<tr>
+					<td align="center"><%= @song1.artist + " " + @song1.title%></td>
+					<td align="center"><%= @song2.artist + " " + @song2.title%></td>
+				</tr>
+				<tr>
+					<td align="center">
+					<%= audio_tag("#{@song1.path}", autoplay: false, controls: true)%>
+
+					</td>
+					<td align="center">
+						<%= audio_tag("#{@song2.path}", autoplay: false, controls: true)%>
+					</td>
+				</tr>
+
+			<%= form_tag player_path do %>
+				<tr>
+					<td align="center"><%= radio_button_tag(:win, "win1") %>
+			<%= label_tag(:w1, "#{@song1.title}") %></td>
+					<td align="center"><%= radio_button_tag(:win, "win2") %>
+			<%= label_tag(:w2, "#{@song2.title}") %></td>
+				</tr>
+				<tr>
+				<%= hidden_field_tag(:genre, @genre)%>
+				<%= hidden_field_tag(:playerNow, true)%>
+				<%= hidden_field_tag(:song1Id, @song1.id)%>
+				<%= hidden_field_tag(:song2Id, @song2.id)%>
+				<td align="center" colspan="2"><%= submit_tag "Next" %></td>
+				</tr>
+			<% end %>
+			</table>
+			
+		</div>
+
+		<br/>
+		<br/>
+		<table align="center" border="2">
+				<caption style="color:indigo">Top</caption>
+				<tr>
+					<th align="center">Place</th>
+					<th align="center">Title</th>
+					<th align="center">Artist</th>
+					<th align="center">Number Of Votes</th>
+				</tr>
+				<% if @songsV[0] != nil%>
+				<tr>
+					<td align="center">1</td>
+					<td align="center"><%= @songsV[0].title %></td>
+					<td align="center"><%= @songsV[0].artist %></td>
+					<td align="center"><%= @songsV[0].votes %></td>
+				</tr>
+				<%end%>
+				<% if @songsV[1] != nil%>
+				<tr>
+					<td align="center">2</td>
+					<td align="center"><%= @songsV[1].title %></td>
+					<td align="center"><%= @songsV[1].artist %></td>
+					<td align="center"><%= @songsV[1].votes %></td>
+				</tr>
+				<%end%>
+				<% if @songsV[2] != nil%>
+				<tr>
+					<td align="center">3</td>
+					<td align="center"><%= @songsV[2].title %></td>
+					<td align="center"><%= @songsV[2].artist %></td>
+					<td align="center"><%= @songsV[2].votes %></td>
+				</tr>
+				<%end%>
+				<% if @songsV[3] != nil%>
+				<tr>
+					<td align="center">4</td>
+					<td align="center"><%= @songsV[3].title %></td>
+					<td align="center"><%= @songsV[3].artist %></td>
+					<td align="center"><%= @songsV[3].votes %></td>
+				</tr>
+				<%end%>
+				<% if @songsV[4] != nil%>
+				<tr>
+					<td align="center">5</td>
+					<td align="center"><%= @songsV[4].title %></td>
+					<td align="center"><%= @songsV[4].artist %></td>
+					<td align="center"><%= @songsV[4].votes %></td>
+				</tr>
+				<%end%>
+		</table>
+	</body>
+</html>

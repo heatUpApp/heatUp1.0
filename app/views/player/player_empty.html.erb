@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HeatUp - PlayNow</title>
+	<head>
+	
+	<body bgcolor="yellow">
+		<h1 style="text-align:center; font-size:60px; color:red"><a href="home">HeatUp</a></h1>
+		<h1 style="text-align:center; color:indigo"><%= @genre %></h1>
+
+		<table align="center" border="2">
+				<caption style="color:indigo">Top</caption>
+				<tr>
+					<th align="center">Place</th>
+					<th align="center">Title</th>
+					<th align="center">Artist</th>
+					<th align="center">Number Of Votes</th>
+				</tr>
+				<%if @songs.length == 1%>
+					<tr>
+						<td align="center">1</td>
+						<td align="center"><%= @songs[0].title %></td>
+						<td align="center"><%= @songs[0].artist %></td>
+						<td align="center"><%= @songs[0].votes %></td>
+					</tr>
+				<% end %>
+		</table>
+	</body>
+</html>
