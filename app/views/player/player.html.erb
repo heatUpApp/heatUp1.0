@@ -137,12 +137,12 @@
 						<th>th is 2</th>
 						<th>th is 3</th>
 					</tr>
-					<% @songs.each do |users| %>
+					<% @songs.each do |f| %>
 					<tr>
 						<td align="center">1</td>
-						<td align="center"><%= @songs[0].title %></td>
-						<td align="center"><%= @songs[0].artist %></td>
-						<td align="center"><%= @songs[0].votes %></td>
+						<td align="center"><%= f.title %></td>
+						<td align="center"><%= f.artist %></td>
+						<td align="center"><%= f.votes %></td>
 					</tr>
 					<% end %>
 				</tbody>
