@@ -21,6 +21,14 @@ module HeatUp10
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.assets.enabled = true
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    # Precompile additional assets
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
+
+    config.autoload_paths += %W(#{config.root}/lib)
+
     config.active_record.raise_in_transactional_callbacks = true
-  end
+    end
 end

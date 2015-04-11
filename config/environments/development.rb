@@ -34,7 +34,11 @@ Rails.application.configure do
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
-  config.assets.raise_runtime_errors = true
+  config.assets.raise_runtime_errors = true# Add the fonts path
+config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+# Precompile additional assets
+config.assets.precompile += %w( .svg .eot .woff .ttf )
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

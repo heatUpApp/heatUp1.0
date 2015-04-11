@@ -1,78 +1,246 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<title>HeatUp - Music Website for you</title>
-		<style>
-			a {
+<head>
+	<title>HeatUp - Music Website for you</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<style>
+	a {
+		text-decoration: none;
+		background: -webkit-linear-gradient(red, orange);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	body {
+		background-image:url("<%= asset_path 'homepage.jpg' %>");
+	}
+
+	.genres {
+		position: absolute;
+		left: 0%;
+		right: 0%;
+		top: 50%;
+		text-align: center;
+	}
+
+	.#genre-buttons input[type=radio] {
+		background-color: transparent !important;
+	}
+
+	.genre-submit {
+		padding-top: 20px;
+		text-align: center;
+	}
+
+	.genre-text {
+		font-family: 'Open Sans', sans-serif;
+		color:#E62F2F;
+	}
+
+	.nav-bar {
+		position: absolute;
+		left: 0%;
+		width: 100%;
+		height: 50px;
+		top: 0%;
+	}
+
+	.nav-list {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 20px;
+		float: right;
+	}
+
+	#navcontainer ul
+	{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		text-align: center;
+	}
+
+	#navcontainer ul li { display: inline; }
+
+	#navcontainer ul li a
+	{
+				/*text-decoration: none;
+				padding: .2em 1em;
+				color: #fff;
+				background-color: #036;*/
+			}
+
+			#navcontainer ul li a:hover
+			{
+				color: #fff;
+				background-color: #369;
+			}
+
+			.menu-btn {
+
+			}
+
+			.nav-bar li a.menu-btn:hover {
+				background-color: #369;
+				top: 50px;
+			}
+
+
+			.choose-btn {
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+				border-radius: 0px;
+				font-family: 'Open Sans', sans-serif;
+				color: #E62F2F;
+				font-size: 15px;
+				background: rgba(0,0,0,0);
+				padding: 2px 10px 4px 10px;
+				border: solid #E62F2F 6px;
 				text-decoration: none;
-				background: -webkit-linear-gradient(red, orange);
-  				-webkit-background-clip: text;
-  				-webkit-text-fill-color: transparent;
+
+				transition: all 1.25s ease-in-out;
+				-moz-transition: all 1.25s ease-in-out;
+				-webkit-transition: all 1.25s ;
+
 			}
 
-			body {
-				background-image:url('https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpt1/v/t35.0-12/11130957_10206450563686028_109829938_o.jpg?oh=cfb06182b70c4749892d095fbdb95319&oe=552780B6&__gda__=1428595421_85801e27dffd0f66c8719b765d431188');
-				background-repeat:no-repeat;
+			.choose-btn:hover {
+				background: #ffffff;
+				background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+				background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+				background-image: -ms-linear-gradient(top, #ffffff, #f2f2f2);
+				background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+				background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+				border: solid #A61F1F 6px;
+				text-decoration: none;
+
+				transition: all .25s ease-in-out;
+				-moz-transition: all .25s ease-in-out;
+				-webkit-transition: all .25s 
+			}
+
+			.blurred-bg {
+				background-image: url("<%= asset_path 'homepage-blurred.jpg' %>");
+				background-repeat: no-repeat;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				-webkit-background-size: cover;
+				background-size: cover;
 				background-attachment: fixed;
-				background-position:top center;
-				background-size: 100% auto;
-				background-clip: border-box;
-
 			}
-		</style>
-	<head>
-	
-	<body bgcolor="#f2f1ef">
-		<h1 style="text-align:center; font-family:Verdana; color:inherit; font-size:60px;"><a href="home">heatUp</a></h1>
+			.blurred-bg.tinted {
+				background-image: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+				background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+				background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+			}
+			.blurred-bg.shaded {
+				background-image: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+				background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+				background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+			}
 
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
 
-		<h1 style="text-align:center; color:#f2f1ef; font-family:Verdana;">PlayNow</h1>
-		
-		<div align="center">
-			<%= form_tag player_path do %>
-			<%= radio_button_tag(:genre, "Hip-Hop") %>
-			<%= label_tag(:hip_hop, "Hip-Hop") %> 			
- 			<%= radio_button_tag(:genre, "Rock") %>
-			<%= label_tag(:rock, "Rock") %>
-			<%= radio_button_tag(:genre, "Pop") %>
-			<%= label_tag(:pop, "Pop") %>
-			<%= radio_button_tag(:genre, "Classical") %>
-			<%= label_tag(:classical, "Classical") %>
-  			<%= submit_tag "Choose!" %>
-			<% end %>
-		</div>
+  div {
+  margin: 0 0 0.75em 0;
+}
 
-				<table align="center" cellspacing="50px">
-			<tr>
-				
-				<% if user_signed_in? %>
-				<td  style="font-size:50px;color:red">
-				
-					<%= button_to "Account", user_path(id: current_user), :class => "button large", :method => :get %>
-				
-				</td>
-				<td  style="font-size:50px;color:red">
-					<%= button_to "Sign out", destroy_user_session_path, :class => "button large", :method => :delete %>
-				</td>
-				<% else %>
-				<td  style="font-size:50px;color:red">
-					<%= button_to "Sign in", user_session_path, :class => "button large", :method => :get %>
-				</td>
-				<td  style="font-size:50px;color:red">
-					<%= button_to "Sign Up", new_user_registration_path, :class => "button large", :method => :get %>
-				</td>
-				<% end %>
-				
-			</tr>
-		</table>
-	</body>
-</html>
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+	font-family: 'Open Sans', sans-serif;
+		color:#E62F2F;
+  font-size: 14px;
+}
+
+input[type="radio"] + label span {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin: -1px 8px 0 8px;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 0px 5px rgba(230, 47, 47, 1);
+	-moz-box-shadow: 0px 0px 0px 5px rgba(230, 47, 47, 1);
+	box-shadow: 0px 0px 0px 5px rgba(230, 47, 47, 1);
+}
+
+input[type="radio"] + label span {
+  background-color: rgba(0,0,0,0);
+}
+
+input[type="radio"]:hover + label span:hover {
+  background-color: rgba(230, 47, 47,0.5);
+}
+
+input[type="radio"]:checked + label span {
+  background-color: #E62F2F;
+}
+
+input[type="radio"]:hover:checked + label span:hover {
+  background-color: #E62F2F;
+}
+
+
+
+input[type="radio"] + label span,
+input[type="radio"]:checked + label span,
+input[type="radio"]:hover + label span {
+  -webkit-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
+  -moz-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
+}
+
+  
+
+			/*input[type="radio"]+label:before{
+			  content:"";
+			  display:inline-block;
+			  height:19px;
+			  margin:1px 4px 0 -22px;
+			  vertical-align:middle;
+			  width:19px;
+			}
+
+			input[type="radio"]+label:before{
+			  background:url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)-38px top no-repeat;
+			}
+			input[type="radio"]:checked+label:before{
+			  background:url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)-57px top no-repeat;
+			  }*/
+			  </style>
+
+
+			  <head>
+
+			  	<body bgcolor="#f2f1ef">
+
+			  		<h1 class="title">Playnow</h1>
+
+			  		<%= form_tag player_path do %>
+			  		<div class="genres">
+			  			<div id="genre-buttons">
+			  				<%= radio_button_tag(:genre, "Hip-Hop", false, class: "genre-button") %>
+			  				<%= label_tag("genre_Hip-Hop", "<span></span>Hip-Hop".html_safe, class: "genre-text") %> 			
+			  				<%= radio_button_tag(:genre, "Rock", false, class: "genre-button") %>
+			  				<%= label_tag("genre_Rock", "<span></span>Rock".html_safe, class: "genre-text") %>
+			  				<%= radio_button_tag(:genre, "Pop", false, class: "genre-button") %>
+			  				<%= label_tag("genre_Pop", "<span></span>Pop".html_safe, class: "genre-text") %>
+			  				<%= radio_button_tag(:genre, "Classical", false, class: "genre-button") %>
+			  				<%= label_tag("genre_Classical", "<span></span>Classical".html_safe, class: "genre-text") %>
+			  			</div>
+			  			<div class="genre-submit">
+			  				<%= submit_tag "Choose", :class=>"choose-btn"%>
+			  			</div>
+			  		</div>
+			  		<% end %>
+
+
+			  	</body>
+			  	</html>
