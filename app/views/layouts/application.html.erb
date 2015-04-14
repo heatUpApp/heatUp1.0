@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HeatUp10</title>
+	<title>heatUp10</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 	<%= javascript_include_tag "https://code.jquery.com/jquery-2.1.3.min.js" %>
 	<%= javascript_include_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" %>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 	<%= stylesheet_link_tag asset_path('fonts.css') %>
 	<style>
@@ -35,6 +35,8 @@
  .navbar, .navbar-default, .navbar-header {
  	background-color: rgba(0,0,0,0);
  	border-color: rgba(0,0,0,0);
+    margin: 0;
+    border: 0;
  }
 
  .brand-image {
@@ -68,9 +70,10 @@
  	left: 0%;
  	right: 0%;
  	font-weight: bold;
+    text-shadow: none;
  }
 
- a {
+ .custom-font-color {
  	text-decoration: none;
  	background: -webkit-linear-gradient(red, orange);
  	-webkit-background-clip: text;
@@ -148,6 +151,10 @@
  	font-size: 40px;
  	top: -50%;
  }
+
+ .nav-bar-right-custom {
+    padding-right: 5%;
+ }
 	</style>
 
     <script>
@@ -165,27 +172,27 @@
 				<span class="icon-bar"></span>
 			</button>    
 		</div>
-		<a class="navbar-brand" href="/"><div><img class="brand-image" src="http://placehold.it/42x42"></img>Heatup</div></a>
+		<a class="navbar-brand custom-font-color" href="/"><div><img class="brand-image" src="http://placehold.it/42x42"></img>heatUp</div></a>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-left">
         <!--<li><a href="#">Left</a></li>
         <li><a href="#about">Left</a></li>-->
     </ul>
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right nav-bar-right-custom">
     	<% if user_signed_in? %>
     	<!--<li>
     		<%= link_to "Account", user_path(id: current_user), :class => "button large menu-btn", :method => :get %>
     	</li>-->
 
     	<li>
-    		<%= link_to "Settings", edit_user_registration_path(id: current_user), :class => "button large menu-btn", :method => :get %>
+    		<%= link_to "Settings", edit_user_registration_path(id: current_user), :class => "button large menu-btn custom-font-color", :method => :get %>
     	</li>
     	<li>
-    		<%= link_to "Sign out", destroy_user_session_path, :class => "button large menu-btn", :method => :delete %>
+    		<%= link_to "Sign out", destroy_user_session_path, :class => "button large menu-btn custom-font-color", :method => :delete %>
     	</li>
     	<% else %>
     	<li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
-    		<div class="dropdown-menu menu-class blurred-bg tinted" style="padding: 10px;min-width:240px;">
+    		<div class="dropdown-menu menu-class blurred-bg tinted" style="padding: 10px;min-width:240px;" id="signin">
     			<%= form_for(:user, url: session_path(:user)) do |f| %>
     			<div class="field">
     				<%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control nav-input"%>
@@ -206,7 +213,7 @@
     		</div>
     	</li>
     	<li class="dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign Up <strong class="caret"></strong></a>
-    		<div class="dropdown-menu menu-class blurred-bg tinted" style="padding: 10px;min-width:240px;">
+    		<div class="dropdown-menu menu-class blurred-bg tinted" style="padding: 10px;min-width:240px;" id="signup">
     			<%= form_for(:user, url: registration_path(:user)) do |f| %>
 
     			<div class="field">

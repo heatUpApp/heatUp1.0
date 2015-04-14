@@ -13,7 +13,7 @@
 	}
 
 	body {
-		background-image:url("<%= asset_path 'homepage.jpg' %>");
+		/*background-image:url("<%= asset_path 'homepage.jpg' %>");*/
 	}
 
 	.genres {
@@ -34,7 +34,12 @@
 	}
 
 	.genre-text {
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Arimo', sans-serif;
+		color:#E62F2F;
+	}
+
+	.text {
+		font-family: 'Arimo', sans-serif;
 		color:#E62F2F;
 	}
 
@@ -62,166 +67,307 @@
 		text-align: center;
 	}
 
-	#navcontainer ul li { display: inline; }
+	#navcontainer ul li { display: inline;
+	}
 
-	#navcontainer ul li a
+	#navcontainer ul li a:hover
 	{
-				/*text-decoration: none;
-				padding: .2em 1em;
-				color: #fff;
-				background-color: #036;*/
-			}
+		color: #fff;
+		background-color: #369;
+	}
 
-			#navcontainer ul li a:hover
-			{
-				color: #fff;
-				background-color: #369;
-			}
+	.menu-btn {
 
-			.menu-btn {
+	}
 
-			}
-
-			.nav-bar li a.menu-btn:hover {
-				background-color: #369;
-				top: 50px;
-			}
+	.nav-bar li a.menu-btn:hover {
+		background-color: #369;
+		top: 50px;
+	}
 
 
-			.choose-btn {
-				-webkit-border-radius: 0;
-				-moz-border-radius: 0;
-				border-radius: 0px;
-				font-family: 'Open Sans', sans-serif;
-				color: #E62F2F;
-				font-size: 15px;
-				background: rgba(0,0,0,0);
-				padding: 2px 10px 4px 10px;
-				border: solid #E62F2F 6px;
-				text-decoration: none;
+	.choose-btn {
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0px;
+		font-family: 'Open Sans', sans-serif;
+		color: #E62F2F;
+		font-size: 15px;
+		background: rgba(0,0,0,0);
+		padding: 2px 10px 4px 10px;
+		border: solid #E62F2F 6px;
+		text-decoration: none;
 
-				transition: all 1.25s ease-in-out;
-				-moz-transition: all 1.25s ease-in-out;
-				-webkit-transition: all 1.25s ;
+		transition: all 1.25s ease-in-out;
+		-moz-transition: all 1.25s ease-in-out;
+		-webkit-transition: all 1.25s ;
 
-			}
+	}
 
-			.choose-btn:hover {
-				background: #ffffff;
-				background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
-				background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
-				background-image: -ms-linear-gradient(top, #ffffff, #f2f2f2);
-				background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
-				background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
-				border: solid #A61F1F 6px;
-				text-decoration: none;
+	.choose-btn:hover {
+		background: #ffffff;
+		background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+		background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+		background-image: -ms-linear-gradient(top, #ffffff, #f2f2f2);
+		background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+		background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+		border: solid #A61F1F 6px;
+		text-decoration: none;
 
-				transition: all .25s ease-in-out;
-				-moz-transition: all .25s ease-in-out;
-				-webkit-transition: all .25s 
-			}
+		transition: all .25s ease-in-out;
+		-moz-transition: all .25s ease-in-out;
+		-webkit-transition: all .25s 
+	}
 
-			.blurred-bg {
-				background-image: url("<%= asset_path 'homepage-blurred.jpg' %>");
-				background-repeat: no-repeat;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				-webkit-background-size: cover;
-				background-size: cover;
-				background-attachment: fixed;
-			}
-			.blurred-bg.tinted {
-				background-image: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
-				background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
-				background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
-			}
-			.blurred-bg.shaded {
-				background-image: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
-				background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
-				background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
-			}
+	.blurred-bg {
+		background-image: url("<%= asset_path 'homepage-blurred.jpg' %>");
+		background-repeat: no-repeat;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	.blurred-bg.tinted {
+		background-image: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+		background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+		background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+	}
+	.blurred-bg.shaded {
+		background-image: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+		background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'homepage-blurred.jpg' %>");
+	}
+
+	.blurred-bg1 {
+		background-image: url("<%= asset_path 'musicians-blurred.jpg' %>");
+		background-repeat: no-repeat;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	.blurred-bg1.tinted {
+		background-image: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'musicians-blurred.jpg' %>");
+		background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'musicians-blurred.jpg' %>");
+		background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'musicians-blurred.jpg' %>");
+	}
+	.blurred-bg1.shaded {
+		background-image: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'musicians-blurred.jpg' %>");
+		background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'musicians-blurred.jpg' %>");
+		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'musicians-blurred.jpg' %>");
+	}
+
+	.blurred-bg2 {
+		background-image: url("<%= asset_path 'classical-blurred.jpg' %>");
+		background-repeat: no-repeat;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		-webkit-background-size: cover;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	.blurred-bg2.tinted {
+		background-image: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'classical-blurred.jpg' %>");
+		background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'classical-blurred.jpg' %>");
+		background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("<%= asset_path 'classical-blurred.jpg' %>");
+	}
+	.blurred-bg2.shaded {
+		background-image: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'classical-blurred.jpg' %>");
+		background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'classical-blurred.jpg' %>");
+		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("<%= asset_path 'classical-blurred.jpg' %>");
+	}
 
 
-  div {
-  margin: 0 0 0.75em 0;
-}
+	div {
+		margin: 0 0 0.75em 0;
+	}
 
-input[type="radio"] {
-  display: none;
-}
+	input[type="radio"] {
+		display: none;
+	}
 
-input[type="radio"] + label {
-	font-family: 'Open Sans', sans-serif;
+	input[type="radio"] + label {
+		font-family: 'Open Sans', sans-serif;
 		color:#E62F2F;
-  font-size: 14px;
-}
+		font-size: 14px;
+	}
 
-input[type="radio"] + label span {
-  display: inline-block;
-  width: 11px;
-  height: 11px;
-  margin: -1px 8px 0 8px;
-  vertical-align: middle;
-  cursor: pointer;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 0px 5px rgba(230, 47, 47, 1);
-	-moz-box-shadow: 0px 0px 0px 5px rgba(230, 47, 47, 1);
-	box-shadow: 0px 0px 0px 5px rgba(230, 47, 47, 1);
-}
+	input[type="radio"] + label span {
+		display: inline-block;
+		width: 11px;
+		height: 11px;
+		margin: -1px 8px 0 8px;
+		vertical-align: middle;
+		cursor: pointer;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		-webkit-box-shadow: 0px 0px 0px 5px rgba(230, 47, 47, 1);
+		-moz-box-shadow: 0px 0px 0px 5px rgba(230, 47, 47, 1);
+		box-shadow: 0px 0px 0px 5px rgba(230, 47, 47, 1);
+	}
 
-input[type="radio"] + label span {
-  background-color: rgba(0,0,0,0);
-}
+	input[type="radio"] + label span {
+		background-color: rgba(0,0,0,0);
+	}
 
-input[type="radio"]:hover + label span:hover {
-  background-color: rgba(230, 47, 47,0.5);
-}
+	input[type="radio"]:hover + label span:hover {
+		background-color: rgba(230, 47, 47,0.5);
+	}
 
-input[type="radio"]:checked + label span {
-  background-color: #E62F2F;
-}
+	input[type="radio"]:checked + label span {
+		background-color: #E62F2F;
+	}
 
-input[type="radio"]:hover:checked + label span:hover {
-  background-color: #E62F2F;
-}
+	input[type="radio"]:hover:checked + label span:hover {
+		background-color: #E62F2F;
+	}
 
 
 
-input[type="radio"] + label span,
-input[type="radio"]:checked + label span,
-input[type="radio"]:hover + label span {
-  -webkit-transition: background-color 0.4s linear;
-  -o-transition: background-color 0.4s linear;
-  -moz-transition: background-color 0.4s linear;
-  transition: background-color 0.4s linear;
-}
+	input[type="radio"] + label span,
+	input[type="radio"]:checked + label span,
+	input[type="radio"]:hover + label span {
+		-webkit-transition: background-color 0.4s linear;
+		-o-transition: background-color 0.4s linear;
+		-moz-transition: background-color 0.4s linear;
+		transition: background-color 0.4s linear;
+	}
 
-  
+	.cara-offset {
+		margin-top:-70px;
+		z-index:0;
+	}
 
-			/*input[type="radio"]+label:before{
-			  content:"";
-			  display:inline-block;
-			  height:19px;
-			  margin:1px 4px 0 -22px;
-			  vertical-align:middle;
-			  width:19px;
+	.navbar {
+		z-index: 1;
+	}
+
+	.listbox {
+		position:absolute;
+		left:25%;
+		width:50%;
+		top:50%;
+		padding: 5px 5px 5px 5px;
+		border-radius: 10px;
+	}
+
+	.listbox ul li {
+		font-size:18px;
+		margin: 5px 5px 5px 5px;
+	}
+	</style>
+
+	<%= stylesheet_link_tag asset_path('fullcaro.css') %>
+
+	<script>
+		$(document).ready(function() {
+			var cur = 0;
+
+			var drawBackground = function() {
+				$("#signup").removeClass("blurred-bg blurred-bg1 blurred-bg2").addClass("blurred-bg"+(cur == 0 ? "" : cur)+" tinted");
+				$("#signin").removeClass("blurred-bg blurred-bg1 blurred-bg2").addClass("blurred-bg"+(cur == 0 ? "" : cur)+" tinted");
 			}
 
-			input[type="radio"]+label:before{
-			  background:url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)-38px top no-repeat;
-			}
-			input[type="radio"]:checked+label:before{
-			  background:url(http://d3pr5r64n04s3o.cloudfront.net/tuts/391_checkboxes/check_radio_sheet.png)-57px top no-repeat;
-			  }*/
-			  </style>
+			$("#prev-caro").click(function() {
+				cur = (cur + 1)%3;
+				drawBackground();
+			});
+
+			$("#next-caro").click(function() {
+				cur = (cur - 1)%3;
+				drawBackground();
+			});
+		})
+	</script>
 
 
-			  <head>
+	<head>
 
-			  	<body bgcolor="#f2f1ef">
+		<body>
 
-			  		<h1 class="title">Playnow</h1>
+			<header id="myCarousel" class="carousel slide cara-offset" data-interval="false">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="Listener" class=""></li>
+					<li data-target="#myCarousel" data-slide-to="Home" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="Musician" class=""></li>
+				</ol>
+
+				<!-- Wrapper for Slides -->
+				<div class="carousel-inner">
+					<div class="item">
+						<!-- Set the first background image using inline CSS below. -->
+						<div class="fill" style="background-image:url('<%= asset_path 'classical.jpg' %>');"></div>
+						<div class="title">
+							<h2>Listeners</h2>
+						</div>
+						<div class="listbox blurred-bg2 tinted text">
+							<ul>
+								<li>Choose the genre you want to hear</li>
+								<li>Listen to two 15 second clips and pick which one you prefer</li>
+								<li>You can also go back and listen to songs you like</li>
+								<li>Discover music and artists. Decide which artists deserve to be known. Beef up your music library.</li>
+								<li>Check out what other people are selecting as their favorite songs on the Hotlist</li>
+							</ul>
+						</div>
+					</div>
+					<div class="item active">
+						<!-- Set the second background image using inline CSS below. -->
+						<div class="fill" style="background-image:url('<%= asset_path 'homepage.jpg' %>');">
+
+						</div>
+						<%= form_tag player_path do %>
+						<div class="genres">
+							<div id="genre-buttons">
+								<%= radio_button_tag(:genre, "Hip-Hop", false, class: "genre-button") %>
+								<%= label_tag("genre_Hip-Hop", "<span></span>Hip-Hop".html_safe, class: "genre-text") %> 			
+								<%= radio_button_tag(:genre, "Rock", false, class: "genre-button") %>
+								<%= label_tag("genre_Rock", "<span></span>Rock".html_safe, class: "genre-text") %>
+								<%= radio_button_tag(:genre, "Pop", false, class: "genre-button") %>
+								<%= label_tag("genre_Pop", "<span></span>Pop".html_safe, class: "genre-text") %>
+								<%= radio_button_tag(:genre, "Classical", false, class: "genre-button") %>
+								<%= label_tag("genre_Classical", "<span></span>Classical".html_safe, class: "genre-text") %>
+							</div>
+							<div class="genre-submit">
+								<%= submit_tag "Choose", :class=>"choose-btn"%>
+							</div>
+						</div>
+						<% end %>
+						<div class="title">
+							<h2>Playnow</h2>
+						</div>
+					</div>
+					<div class="item">
+						<!-- Set the third background image using inline CSS below. -->
+						<div class="fill" style="background-image:url('<%= asset_path 'musicians.jpg' %>');"></div>
+						<div class="title">
+							<h2>Musicians</h2>
+						</div>
+						<div class="listbox blurred-bg1 tinted text">
+							<ul>
+								<li>Upload your song and select 15 seconds and the genre it is for</li>
+								<li>Allow the song to be played and matched up with other songs in the same genre</li>
+								<li>Let your talent be heard, your sound be spread, and your fans to become hooked</li>
+								<li>Set up information about your band or self so that those who like your music can hear more</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Controls -->
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev" id="prev-caro">
+					<span class="icon-prev"></span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" data-slide="next" id="next-caro">
+					<span class="icon-next"></span>
+				</a>
+
+			</header>
+
+
+			  		<!--<h1 class="title">Playnow</h1>
 
 			  		<%= form_tag player_path do %>
 			  		<div class="genres">
@@ -239,7 +385,7 @@ input[type="radio"]:hover + label span {
 			  				<%= submit_tag "Choose", :class=>"choose-btn"%>
 			  			</div>
 			  		</div>
-			  		<% end %>
+			  		<% end %>-->
 
 
 			  	</body>
